@@ -1,0 +1,15 @@
+---
+title: "R Notebook"
+output: github_document
+---
+
+
+
+```{r}
+kids <- c("Jack", "Jill")
+ages <- c(12, 10)
+d <- data.frame(kids, ages, stringsAsFactors = FALSE)
+d
+```
+
+
