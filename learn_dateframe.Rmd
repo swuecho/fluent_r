@@ -1,8 +1,9 @@
 ---
-title: "R Notebook"
+title: "data frames"
 output: github_document
 ---
 
+## creating data frame
 
 
 ```{r}
@@ -10,6 +11,20 @@ kids <- c("Jack", "Jill")
 ages <- c(12, 10)
 d <- data.frame(kids, ages, stringsAsFactors = FALSE)
 d
+str(d)
 ```
+
+## accessing dataframe
+```{r}
+d[[1]]
+d$kids
+```
+
+### the third ways
+
+```{r}
+d[,1]
+```
+
 
 
