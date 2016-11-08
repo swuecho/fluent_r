@@ -1,0 +1,45 @@
+---
+title: "list and hash"
+output: github_document
+---
+
+```{r}
+library(hash)
+h <- hash( keys=letters, values=1:26 )
+h <- hash( letters, 1:26)
+h$a
+h$a <- 5
+h$a
+as.list(h)
+```
+
+
+```{r}
+#TODO: list usage in R
+all_unique_char <- function (str) {
+  chars <- strsplit(str, "")[[1]]
+  list_of_chars <- list()
+  for (char in chars) {
+    list_of_chars[[char]] <- list_of_chars[[char]] +1
+    print(list_of_chars[[char]])
+  }
+  return(list_of_chars)
+}
+str = "notunique"
+class(str)
+all_unique_char(str)
+```
+
+
+
+## TODO: write up a blog about Rcpp
+
+```{Rcpp, fibCpp}
+#include <Rcpp.h>
+
+// [[Rcpp::export]]
+int fibonacci(const int x) {
+    if (x == 0 || x == 1) return(x);
+    return (fibonacci(x - 1)) + fibonacci(x - 2);
+}
+```
