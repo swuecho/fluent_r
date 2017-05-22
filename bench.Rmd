@@ -1,0 +1,32 @@
+---
+title: "str_reverse_bench"
+author: "Hao"
+date: "November 8, 2016"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+reverse_str_r <- function(str) {
+    chars <- strsplit(str, "")[[1]]
+    return(paste(rev(chars), collapse=''))
+}
+```
+
+
+```{r}
+library(microbenchmark)
+library(echo) # for str_reverse
+```
+
+```{r}
+str <- "abcdefgh"
+str <-paste(replicate(2,str), collapse = "")
+microbenchmark(
+  reverse_str_r(str), str_reverse(str)
+)
+```
